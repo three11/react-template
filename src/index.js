@@ -8,7 +8,6 @@ import { render } from 'react-dom';
  * Internal dependencies
  */
 import style from './index.scss';
-import normalize from 'normalize.css';
 
 /**
  * Register App component

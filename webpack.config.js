@@ -22,12 +22,14 @@ const htmlConfig = {
 };
 
 const cssConfig = {
-	test: /\.scss$/,
+	test: /(\.css|\.scss)$/,
 	use: ExtractTextPlugin.extract({
 		use: [
 			{
 				loader: 'css-loader',
-				options: { sourceMap: true }
+				options: {
+					sourceMap: true
+				}
 			},
 			{
 				loader: 'postcss-loader',
@@ -61,10 +63,7 @@ const assetsConfig = {
 		{
 			loader: 'file-loader',
 			options: {
-				name: '[hash].[ext]',
-				context: '',
-				publicPath: './',
-				outputPath: './dist/'
+				name: '[hash].[ext]'
 			}
 		}
 	]
@@ -87,5 +86,8 @@ module.exports = {
 	cache: true,
 	bail: false,
 	devtool: 'source-map',
-	stats: 'errors-only'
+	stats: 'errors-only',
+	devServer: {
+		stats: 'errors-only'
+	}
 };

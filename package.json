@@ -41,7 +41,6 @@
 	},
 	"homepage": "https://github.com/three11/react-template#readme",
 	"dependencies": {
-		"normalize.css": "^8.0.0",
 		"react": "^16.3.2",
 		"react-dom": "^16.3.2"
 	},
