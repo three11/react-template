@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 /**
  * Internal dependencies
@@ -14,9 +15,9 @@ import style from './index.scss';
  */
 const App = () => {
 	return (
-		<div>
+		<BrowserRouter>
 			<p>Hello World!</p>
-		</div>
+		</BrowserRouter>
 	);
 };
 
