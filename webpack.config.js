@@ -1,3 +1,4 @@
+const { resolve } = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -70,8 +71,16 @@ const assetsConfig = {
 };
 
 module.exports = {
+	entry: './src/js/index.js',
 	module: {
 		rules: [babelConfig, htmlConfig, cssConfig, assetsConfig]
+	},
+	resolve: {
+		alias: {
+			_store: resolve(__dirname, 'src/js/store/store.js'),
+			_actions: resolve(__dirname, 'src/js/store/actions/actions.js'),
+			_reducers: resolve(__dirname, 'src/js/store/reducers/reducers.js')
+		}
 	},
 	plugins: [
 		new HtmlWebPackPlugin({
