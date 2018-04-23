@@ -77,9 +77,10 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			_store: resolve(__dirname, 'src/js/store/store.js'),
-			_actions: resolve(__dirname, 'src/js/store/actions/actions.js'),
-			_reducers: resolve(__dirname, 'src/js/store/reducers/reducers.js')
+			_store: resolve(__dirname, 'src/js/store.js'),
+			_actions: resolve(__dirname, 'src/js/actions/index.js'),
+			_reducers: resolve(__dirname, 'src/js/reducers/index.js'),
+			_components: resolve(__dirname, 'src/js/components/')
 		}
 	},
 	plugins: [

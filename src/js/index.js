@@ -9,9 +9,9 @@ import { BrowserRouter } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-import App from './components/App/App';
+import App from '_components/App';
 import store from '_store';
-import style from '../index.scss';
+import style from './styles/Index.scss';
 
 /**
  * Render the App component
