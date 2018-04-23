@@ -1,4 +1,6 @@
 import React from 'react';
+import { hot } from 'react-hot-loader';
+
 import Footer from './Footer';
 import AddTodo from './AddTodo';
 import VisibleTodoList from './VisibleTodoList';
@@ -15,4 +17,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default hot(module)(App);

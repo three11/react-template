@@ -1,7 +1,17 @@
 import { createStore } from 'redux';
 
-import rootReducer from './reducers/index';
+import rootReducer from '_reducers';
 
-const store = createStore(rootReducer);
+const configureStore = (initialState = {}) => {
+	const store = createStore(rootReducer, initialState);
 
-export default store;
+	if (module.hot) {
+		module.hot.accept('_reducers', () => {
+			store.replaceReducer(require('_reducers').default);
+		});
+	}
+
+	return store;
+};
+
+export default configureStore;
