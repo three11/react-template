@@ -1,5 +1,11 @@
+/**
+ * External dependencies
+ */
 import React from 'react';
 
+/**
+ * Render the todo item
+ */
 const Todo = ({ onClick, completed, text }) => (
 	<li
 		onClick={onClick}
@@ -7,7 +13,7 @@ const Todo = ({ onClick, completed, text }) => (
 			textDecoration: completed ? 'line-through' : 'none'
 		}}
 	>
-		{text}
+		{text} asd
 	</li>
 );
 

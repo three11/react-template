@@ -10,12 +10,16 @@ import { BrowserRouter, Route } from 'react-router-dom';
  * Internal dependencies
  */
 import App from '_components/App';
-import style from './styles/Index.scss';
-
 import configureStore from '_store';
 
-const store = configureStore({});
+/**
+ * Create store
+ */
+const store = configureStore();
 
+/**
+ * Render the application
+ */
 render(
 	<Provider store={store}>
 		<BrowserRouter>

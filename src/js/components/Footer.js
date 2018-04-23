@@ -1,7 +1,17 @@
+/**
+ * External dependencies
+ */
 import React from 'react';
+
+/**
+ * Internal dependencies
+ */
 import FilterLink from './FilterLink';
 import { VisibilityFilters } from '_actions';
 
+/**
+ * Render the footer
+ */
 const Footer = () => {
 	return (
 		<div>

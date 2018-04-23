@@ -1,6 +1,16 @@
+/**
+ * External dependencies
+ */
 import React from 'react';
+
+/**
+ * Internal dependencies
+ */
 import Todo from './Todo';
 
+/**
+ * Render the todo list
+ */
 const TodoList = ({ todos, toggleTodo }) => {
 	return (
 		<ul>

@@ -1,7 +1,13 @@
+/**
+ * External dependencies
+ */
 import { connect } from 'react-redux';
 
-import { toggleTodo } from '_actions';
+/**
+ * Internal dependencies
+ */
 import TodoList from './TodoList';
+import { toggleTodo } from '_actions';
 
 const getVisibleTodos = (todos, filter) => {
 	switch (filter) {

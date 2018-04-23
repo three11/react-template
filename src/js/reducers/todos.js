@@ -1,3 +1,11 @@
+/**
+ * Todos reducer
+ *
+ * @param  {Array}  state
+ * @param  {Object} action
+ *
+ * @return {Array}
+ */
 const todos = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_TODO':
@@ -6,7 +14,7 @@ const todos = (state = [], action) => {
 				{
 					id: action.id,
 					text: action.text,
-					completed: false
+					completed: true
 				}
 			];
 

@@ -24,38 +24,40 @@ const htmlConfig = {
 
 const cssConfig = {
 	test: /(\.css|\.scss)$/,
-	use: ExtractTextPlugin.extract({
-		use: [
-			{
-				loader: 'css-loader',
-				options: {
-					sourceMap: true
+	use: ['css-hot-loader'].concat(
+		ExtractTextPlugin.extract({
+			use: [
+				{
+					loader: 'css-loader',
+					options: {
+						sourceMap: true
+					}
+				},
+				{
+					loader: 'postcss-loader',
+					options: {
+						plugins: [
+							require('postcss-easy-import'),
+							require('postcss-url')({
+								url: 'rebase'
+							}),
+							require('postcss-utilities'),
+							require('postcss-flexbugs-fixes'),
+							require('autoprefixer')()
+						],
+						sourceMap: true
+					}
+				},
+				{
+					loader: 'sass-loader',
+					options: {
+						sourceMap: true
+					}
 				}
-			},
-			{
-				loader: 'postcss-loader',
-				options: {
-					plugins: [
-						require('postcss-easy-import'),
-						require('postcss-url')({
-							url: 'rebase'
-						}),
-						require('postcss-utilities'),
-						require('postcss-flexbugs-fixes'),
-						require('autoprefixer')()
-					],
-					sourceMap: true
-				}
-			},
-			{
-				loader: 'sass-loader',
-				options: {
-					sourceMap: true
-				}
-			}
-		],
-		fallback: 'style-loader'
-	})
+			],
+			fallback: 'style-loader'
+		})
+	)
 };
 
 const assetsConfig = {
@@ -78,6 +80,7 @@ module.exports = {
 	resolve: {
 		alias: {
 			_store: resolve(__dirname, 'src/js/store.js'),
+			_styles: resolve(__dirname, 'src/js/styles/'),
 			_actions: resolve(__dirname, 'src/js/actions/index.js'),
 			_reducers: resolve(__dirname, 'src/js/reducers/index.js'),
 			_components: resolve(__dirname, 'src/js/components/')

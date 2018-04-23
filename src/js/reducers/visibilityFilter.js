@@ -1,3 +1,11 @@
+/**
+ * Visibility reducer
+ *
+ * @param  {String} state
+ * @param  {Object} action
+ *
+ * @return {String}
+ */
 const visibilityFilter = (state = 'SHOW_ALL', action) => {
 	switch (action.type) {
 		case 'SET_VISIBILITY_FILTER':

@@ -1,7 +1,21 @@
+/**
+ * External dependencies
+ */
 import React from 'react';
 import { connect } from 'react-redux';
+
+/**
+ * Internal dependencies
+ */
 import { addTodo } from '_actions';
 
+/**
+ * Render a form for adding a todo item
+ *
+ * @param  {Function} options.dispatch
+ *
+ * @return {Object}
+ */
 const AddTodo = ({ dispatch }) => {
 	let input;
 
