@@ -13,12 +13,25 @@ import App from '_components/App';
 import store from '_store';
 import style from './styles/Index.scss';
 
+const root = document.getElementById('app');
+const boot = Component => {
+	render(
+		<Provider store={store}>
+			<App />
+		</Provider>,
+		root
+	);
+};
+
 /**
  * Render the App component
  */
-render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('app')
-);
+boot(App);
+
+if (module.hot) {
+	module.hot.accept('_components/App.js', () => {
+		const NextApp = require('_components/App.js').default;
+
+		boot(NextApp);
+	});
+}

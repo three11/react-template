@@ -71,7 +71,7 @@ const assetsConfig = {
 };
 
 module.exports = {
-	entry: './src/js/index.js',
+	entry: ['react-hot-loader/patch', './src/js/index'],
 	module: {
 		rules: [babelConfig, htmlConfig, cssConfig, assetsConfig]
 	},
