@@ -3,32 +3,31 @@
  */
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 /**
  * Internal dependencies
  */
-import Footer from './Footer';
-import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodoList';
+import Main from '_components/generic/Main';
 
 /**
- * Stylesheet
+ * Component stylesheet
  */
 import '_styles/App.scss';
 
 /**
- * Export the component
+ * Convert store's state to component props
+ *
+ * @param  {Object} state
+ *
+ * @return {Object}
  */
-const App = () => {
-	return (
-		<div>
-			<AddTodo />
+const mapStateToProps = state => state;
 
-			<VisibleTodoList />
-
-			<Footer />
-		</div>
-	);
-};
+/**
+ * Compose the application and connect the store
+ */
+const App = withRouter(connect(mapStateToProps)(Main));
 
 export default hot(module)(App);
