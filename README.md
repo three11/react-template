@@ -30,37 +30,37 @@ Then navigate to the `react-template` folder and proceed with the rest of the in
 
 ## Install
 
-```
+```console
 yarn
 ```
 
 or
 
-```
+```console
 npm i
 ```
 
 ## Develop
 
-```
+```console
 yarn start
 ```
 
 or
 
-```
+```console
 npm start
 ```
 
 ## Build
 
-```
+```console
 yarn build
 ```
 
 or
 
-```
+```console
 npm run build
 ```
 
@@ -134,7 +134,7 @@ This setup uses [Browserslist](https://github.com/browserslist/browserslist) to 
 
 The default list of supported browsers is listed in the `package.json` file:
 
-```
+```json
 "browserslist": ["> 1%", "last 2 versions"]
 ```
 
