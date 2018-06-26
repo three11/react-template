@@ -2,6 +2,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/three11/react-template.svg?style=social&label=Fork)](https://github.com/three11/react-template/network#fork-destination-box)
 [![GitHub issues](https://img.shields.io/github/issues/three11/react-template.svg)](https://github.com/three11/react-template/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/three11/react-template.svg)](https://github.com/three11/react-template/commits/master)
+[![Build Status](https://travis-ci.org/three11/react-template.svg?branch=master)](https://travis-ci.org/three11/react-template)
 [![license](https://img.shields.io/github/license/three11/react-template.svg)](https://github.com/three11/react-template)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/react-template/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/react-template/webpack.config.js/graphs/commit-activity)
