@@ -6,8 +6,9 @@
 [![license](https://img.shields.io/github/license/three11/react-template.svg)](https://github.com/three11/react-template)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/react-template/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/react-template/webpack.config.js/graphs/commit-activity)
+[![Greenkeeper badge](https://badges.greenkeeper.io/three11/react-template.svg)](https://greenkeeper.io/)
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/) [![Greenkeeper badge](https://badges.greenkeeper.io/three11/react-template.svg)](https://greenkeeper.io/)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/)
 
 # React Template
 
