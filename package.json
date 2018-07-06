@@ -61,7 +61,7 @@
 		"autoprefixer": "^8.6.3",
 		"babel-loader": "^8.0.0-beta",
 		"css-hot-loader": "^1.3.9",
-		"css-loader": "^0.28.11",
+		"css-loader": "^1.0.0",
 		"cssnano": "^4.0.0",
 		"extract-text-webpack-plugin": "^4.0.0-beta.0",
 		"file-loader": "^1.1.11",
