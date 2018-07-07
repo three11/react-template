@@ -7,6 +7,8 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/three11/react-template/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/three11/react-template/webpack.config.js/graphs/commit-activity)
 [![Greenkeeper badge](https://badges.greenkeeper.io/three11/react-template.svg)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/three11/react-template/status.svg)](https://david-dm.org/three11/react-template)
+[![devDependencies Status](https://david-dm.org/three11/react-template/dev-status.svg)](https://david-dm.org/three11/react-template?type=dev)
 
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/three11/)
 
@@ -32,37 +34,37 @@ Then navigate to the `react-template` folder and proceed with the rest of the in
 
 ## Install
 
-```console
+```sh
 yarn
 ```
 
 or
 
-```console
+```sh
 npm i
 ```
 
 ## Develop
 
-```console
+```sh
 yarn start
 ```
 
 or
 
-```console
+```sh
 npm start
 ```
 
 ## Build
 
-```console
+```sh
 yarn build
 ```
 
 or
 
-```console
+```sh
 npm run build
 ```
 
@@ -72,53 +74,53 @@ npm run build
 
 1.  Folder structure:
 
-    *   `components/`
-        *   `generic/`
-        *   `pages/`
-        *   `App.js`
-    *   `constants/`
-    *   `store/`
-        *   `modules/`
-            *   `...`
-        *   `sagas/`
-            *   `...`
-            *   `index.js`
-    *   `utilities/`
-        *   `...`
-    *   `bootstrap.js`
+    -   `components/`
+        -   `generic/`
+        -   `pages/`
+        -   `App.js`
+    -   `constants/`
+    -   `store/`
+        -   `modules/`
+            -   `...`
+        -   `sagas/`
+            -   `...`
+            -   `index.js`
+    -   `utilities/`
+        -   `...`
+    -   `bootstrap.js`
 
 2.  Latest EcmaScript support
 
-    *   Usage of the latest features in EcmaScript
-    *   Using [Babel](https://github.com/babel/babel) to transpile to ES5
-    *   Minification of the bundled file
-    *   Source maps
+    -   Usage of the latest features in EcmaScript
+    -   Using [Babel](https://github.com/babel/babel) to transpile to ES5
+    -   Minification of the bundled file
+    -   Source maps
 
 3.  Webpack aliases:
 
-    *   `_sagas`: `'src/js/store/sagas'`
-    *   `_store`: `'src/js/store'`
-    *   `_styles`: `'src/styles'`
-    *   `_images`: `'src/images'`
-    *   `_utilities`: `'src/js/utilities'`
-    *   `_constants`: `'src/js/constants'`
-    *   `_components`: `'src/js/components'`
+    -   `_sagas`: `'src/js/store/sagas'`
+    -   `_store`: `'src/js/store'`
+    -   `_styles`: `'src/styles'`
+    -   `_images`: `'src/images'`
+    -   `_utilities`: `'src/js/utilities'`
+    -   `_constants`: `'src/js/constants'`
+    -   `_components`: `'src/js/components'`
 
 ### CSS
 
 1.  [SASS](http://sass-lang.com/) stylesheets preprocessing
 
-    *   The SASS file/folder structure utilizes the ITCSS pattern as shown and explained [here](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
-    *   Glob import in SASS thanks to [node-sass-magic-importer](https://github.com/maoberlehner/node-sass-magic-importer)
+    -   The SASS file/folder structure utilizes the ITCSS pattern as shown and explained [here](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
+    -   Glob import in SASS thanks to [node-sass-magic-importer](https://github.com/maoberlehner/node-sass-magic-importer)
 
 2.  [PostCSS](https://github.com/postcss/postcss) stylesheets postprocessing including:
 
-    *   [easy importing](https://github.com/TrySound/postcss-easy-import) of non-sass files
-    *   [url rebase](https://github.com/postcss/postcss-url) - locates and copies assets from `node_modules`
-    *   [postcss-utilities](https://github.com/ismamz/postcss-utilities) - allows usage of utility mixins such as `clearfix`
-    *   [flexbox bugs](https://github.com/luisrudge/postcss-flexbugs-fixes) - fixes common flexbox issues on Internet Explorer
-    *   [css minification](http://cssnano.co/) - minifies the bundles stylesheet
-    *   [automatic vendor prefixes](https://github.com/postcss/autoprefixer)
+    -   [easy importing](https://github.com/TrySound/postcss-easy-import) of non-sass files
+    -   [url rebase](https://github.com/postcss/postcss-url) - locates and copies assets from `node_modules`
+    -   [postcss-utilities](https://github.com/ismamz/postcss-utilities) - allows usage of utility mixins such as `clearfix`
+    -   [flexbox bugs](https://github.com/luisrudge/postcss-flexbugs-fixes) - fixes common flexbox issues on Internet Explorer
+    -   [css minification](http://cssnano.co/) - minifies the bundles stylesheet
+    -   [automatic vendor prefixes](https://github.com/postcss/autoprefixer)
 
         > "Write your CSS rules without vendor prefixes (in fact, forget about them entirely)"
 
@@ -137,7 +139,9 @@ This setup uses [Browserslist](https://github.com/browserslist/browserslist) to 
 The default list of supported browsers is listed in the `package.json` file:
 
 ```json
-"browserslist": ["> 1%", "last 2 versions"]
+{
+	"browserslist": ["> 1%", "last 2 versions"]
+}
 ```
 
 This means that supported browsers vary based on current usage data and current browser versions.
