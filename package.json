@@ -70,7 +70,7 @@
     "node-sass": "^4.9.2",
     "node-sass-magic-importer": "^5.2.0",
     "postcss-easy-import": "^3.0.0",
-    "postcss-flexbugs-fixes": "^3.3.0",
+    "postcss-flexbugs-fixes": "^4.0.0",
     "postcss-loader": "^2.1.6",
     "postcss-url": "^7.3.2",
     "postcss-utilities": "^0.8.0",
