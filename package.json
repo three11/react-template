@@ -72,7 +72,7 @@
     "postcss-easy-import": "^3.0.0",
     "postcss-flexbugs-fixes": "^4.0.0",
     "postcss-loader": "^3.0.0",
-    "postcss-url": "^7.3.2",
+    "postcss-url": "^8.0.0",
     "postcss-utilities": "^0.8.0",
     "postcss-watch-folder": "^0.1.2",
     "react-hot-loader": "^4.3.3",
