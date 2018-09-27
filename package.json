@@ -67,7 +67,7 @@
     "@babel/preset-react": "7.0.0",
     "@babel/runtime": "7.0.0",
     "autoprefixer": "9.1.5",
-    "babel-loader": "8.0.2",
+    "babel-loader": "8.0.3",
     "css-hot-loader": "1.4.2",
     "css-loader": "1.0.0",
     "cssnano": "4.1.0",
