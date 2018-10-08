@@ -85,7 +85,7 @@
     "postcss-watch-folder": "0.1.2",
     "react-hot-loader": "4.3.11",
     "sass-loader": "7.1.0",
-    "style-loader": "0.23.0",
+    "style-loader": "0.23.1",
     "svg-react-loader": "0.4.5",
     "webpack-hot-middleware": "2.24.3",
     "webpack-dev-server": "3.1.9",
