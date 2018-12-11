@@ -1,8 +1,5 @@
 {
-	"presets": [
-		["@babel/env", { "modules": false }],
-		"@babel/react"
-	],
+	"presets": [["@babel/env", { "modules": false }], "@babel/react"],
 	"plugins": [
 		"@babel/plugin-transform-runtime",
 		["@babel/plugin-proposal-decorators", { "legacy": true }],
@@ -14,5 +11,10 @@
 		"@babel/plugin-syntax-import-meta",
 		["@babel/plugin-proposal-class-properties", { "loose": false }],
 		"@babel/plugin-proposal-json-strings"
-	]
+	],
+	"env": {
+		"test": {
+			"plugins": ["@babel/plugin-transform-modules-commonjs"]
+		}
+	}
 }
