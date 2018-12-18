@@ -6,8 +6,8 @@ import { put, takeLatest } from 'redux-saga/effects';
 /**
  * Internal dependencies
  */
-import { signOut } from '_store/modules/auth/index';
-import { AUTH_SIGN_OUT_REQUESTED } from '_constants/auth';
+import { signOut } from '@store/modules/auth/index';
+import { AUTH_SIGN_OUT_REQUESTED } from '@constants/auth';
 
 /**
  * Log the user out

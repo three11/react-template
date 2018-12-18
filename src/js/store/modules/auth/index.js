@@ -1,12 +1,7 @@
 /**
  * Internal dependencies
  */
-import {
-	AUTH_SIGN_IN,
-	AUTH_SIGN_IN_REQUESTED,
-	AUTH_SIGN_OUT,
-	AUTH_SIGN_OUT_REQUESTED
-} from '_constants/auth';
+import { AUTH_SIGN_IN, AUTH_SIGN_IN_REQUESTED, AUTH_SIGN_OUT, AUTH_SIGN_OUT_REQUESTED } from '@constants/auth';
 
 /**
  * Initial state

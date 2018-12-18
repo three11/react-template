@@ -1,9 +1,9 @@
 /**
  * Internal dependencies
  */
-import { AUTH_SIGN_IN, AUTH_SIGN_OUT } from '_constants/auth';
-import { authInitialState } from '_store/modules/auth/index';
-import { removeUser } from '_utilities/api/auth';
+import { AUTH_SIGN_IN, AUTH_SIGN_OUT } from '@constants/auth';
+import { authInitialState } from '@store/modules/auth/index';
+import { removeUser } from '@utilities/api/auth';
 
 /**
  * Module reducer

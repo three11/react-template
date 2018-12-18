@@ -87,16 +87,9 @@ npm run build
     -   Using [Babel](https://github.com/babel/babel) to transpile to ES5
     -   Minification of the bundled file
     -   Source maps
+    -   Optional Typescript support
 
-3.  Webpack aliases:
-
-    -   `_sagas`: `'src/js/store/sagas'`
-    -   `_store`: `'src/js/store'`
-    -   `_styles`: `'src/styles'`
-    -   `_images`: `'src/images'`
-    -   `_utilities`: `'src/js/utilities'`
-    -   `_constants`: `'src/js/constants'`
-    -   `_components`: `'src/js/components'`
+3.  Webpack aliases: Checkout the aliases property in the `webpack.config.js` file.
 
 ### CSS
 
@@ -118,7 +111,7 @@ npm run build
 
 ### Assets
 
-Images, Fonts, etc should be placed inside the `src` folder.
+Images, Fonts, etc should be placed inside the `src/assets` folder.
 
 The `src/index.html` file is the template file for the HTML of the app. It can be used to add meta, link, script tags, etc.
 

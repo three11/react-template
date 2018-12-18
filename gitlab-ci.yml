@@ -1,0 +1,12 @@
+image: node:8.9.4
+
+before_script:
+    - npm install
+
+cache:
+    paths:
+        - node_modules/
+
+build:
+    script:
+        - npm run build

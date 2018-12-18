@@ -7,8 +7,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 /**
  * Internal dependencies
  */
-import sagas from '_sagas/index';
-import rootReducer from '_store/rootReducer';
+import sagas from '@sagas/index';
+import rootReducer from '@store/rootReducer';
 
 /**
  * Setup store middlewares
@@ -28,16 +28,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
  * @return {Object}
  */
 const configureStore = (initialState = {}) => {
-	const store = createStore(
-		rootReducer,
-		initialState,
-		composeEnhancers(applyMiddleware(sagaMiddleware))
-	);
+	const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(sagaMiddleware)));
 
 	if (module.hot) {
 		// Enable Webpack hot module replacement for reducers
-		module.hot.accept('_store/rootReducer', () => {
-			const nextRootReducer = require('_store/rootReducer').default;
+		module.hot.accept('@store/rootReducer', () => {
+			const nextRootReducer = require('@store/rootReducer').default;
 			store.replaceReducer(nextRootReducer);
 		});
 	}

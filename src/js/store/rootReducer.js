@@ -7,7 +7,7 @@ import { combineReducers } from 'redux';
 /**
  * Internal dependencies
  */
-import auth from '_store/modules/auth/reducer';
+import auth from '@store/modules/auth/reducer';
 
 /**
  * Combine all reducers

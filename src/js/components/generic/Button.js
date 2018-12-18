@@ -8,11 +8,7 @@ import React from 'react';
  */
 const Button = ({ type, className, children, ...rest }) => {
 	return (
-		<button
-			className={className ? `c-btn ${className}` : `c-btn`}
-			type={type}
-			{...rest}
-		>
+		<button className={className ? `c-btn ${className}` : `c-btn`} type={type} {...rest}>
 			{children}
 		</button>
 	);

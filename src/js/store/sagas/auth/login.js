@@ -6,9 +6,9 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 /**
  * Internal dependencies
  */
-import { fetchData } from '_utilities/api/auth';
-import { signIn } from '_store/modules/auth/index';
-import { AUTH_SIGN_IN_REQUESTED } from '_constants/auth';
+import { fetchData } from '@utilities/api/auth';
+import { signIn } from '@store/modules/auth/index';
+import { AUTH_SIGN_IN_REQUESTED } from '@constants/auth';
 
 /**
  * Fetch logged in user details

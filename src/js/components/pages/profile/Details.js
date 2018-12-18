@@ -6,8 +6,8 @@ import React, { Component } from 'react';
 /**
  * Internal dependencies
  */
-import Button from '_components/generic/Button';
-import { signOutRequest } from '_store/modules/auth';
+import Button from '@components/generic/Button';
+import { signOutRequest } from '@store/modules/auth';
 
 /**
  * Render the component

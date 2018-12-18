@@ -9,9 +9,9 @@ import { BrowserRouter } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-import App from '_components/App';
-import configureStore from '_store/store';
-import { authInitialState } from '_store/modules/auth';
+import App from '@components/App';
+import configureStore from '@store/store';
+import { authInitialState } from '@store/modules/auth';
 
 /**
  * Create the application store

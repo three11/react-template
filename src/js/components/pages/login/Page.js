@@ -7,10 +7,9 @@ import { Link } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-import Shell from '_components/generic/Shell';
-import Field from '_components/generic/Field';
-import Button from '_components/generic/Button';
-import { signInRequest } from '_store/modules/auth';
+import Field from '@components/generic/Field';
+import Button from '@components/generic/Button';
+import { signInRequest } from '@store/modules/auth';
 
 /**
  * Render the component
@@ -60,41 +59,35 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="c-login">
-				<Shell>
-					<h2>Log in to your account</h2>
+				<h2>Log in to your account</h2>
 
-					<p>
-						or <Link to="/register">Register</Link>
-					</p>
+				<p>
+					or <Link to="/register">Register</Link>
+				</p>
 
-					<form onSubmit={this.handleSubmit}>
-						<Field
-							id="email"
-							type="email"
-							value={this.state.email}
-							required
-							placeholder="Email address"
-							onChange={this.handleChange}
-						/>
+				<form onSubmit={this.handleSubmit}>
+					<Field
+						id="email"
+						type="email"
+						value={this.state.email}
+						required
+						placeholder="Email address"
+						onChange={this.handleChange}
+					/>
 
-						<Field
-							id="password"
-							type="password"
-							value={this.state.password}
-							required
-							placeholder="Password"
-							onChange={this.handleChange}
-						/>
+					<Field
+						id="password"
+						type="password"
+						value={this.state.password}
+						required
+						placeholder="Password"
+						onChange={this.handleChange}
+					/>
 
-						<Button type="submit">Log In</Button>
-					</form>
+					<Button type="submit">Log In</Button>
+				</form>
 
-					{this.props.auth.error ? (
-						<p className="c-error">{this.props.auth.error}</p>
-					) : (
-						''
-					)}
-				</Shell>
+				{this.props.auth.error ? <p className="c-error">{this.props.auth.error}</p> : ''}
 			</div>
 		);
 	}

@@ -9,12 +9,12 @@ import { withRouter } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-import Main from '_components/generic/Main';
+import Main from '@components/generic/Main';
 
 /**
  * Component stylesheet
  */
-import '_styles/App.scss';
+import '@styles/App.scss';
 
 /**
  * Convert store's state to component props

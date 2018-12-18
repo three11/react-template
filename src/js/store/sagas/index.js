@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import userLoginSaga from '_sagas/auth/login';
-import userLogoutSaga from '_sagas/auth/logout';
+import userLoginSaga from '@sagas/auth/login';
+import userLogoutSaga from '@sagas/auth/logout';
 
 /**
  * Combine all sagas

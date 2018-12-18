@@ -7,11 +7,10 @@ import { Link } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-import Shell from '_components/generic/Shell';
-import Field from '_components/generic/Field';
-import Button from '_components/generic/Button';
-import { users } from '_utilities/api/auth';
-import { signInRequest } from '_store/modules/auth';
+import Field from '@components/generic/Field';
+import Button from '@components/generic/Button';
+import { users } from '@utilities/api/auth';
+import { signInRequest } from '@store/modules/auth';
 
 /**
  * Render the component
@@ -52,8 +51,7 @@ class Register extends Component {
 			id: users.length + 1,
 			data: {
 				fullname: `${data.firstName} ${data.lastName}`,
-				avatar:
-					'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+				avatar: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
 				details: {
 					email: data.email,
 					dob: data.dob,
@@ -92,69 +90,67 @@ class Register extends Component {
 	render() {
 		return (
 			<div className="c-register">
-				<Shell>
-					<form onSubmit={this.handleSubmit}>
-						<h2>Register</h2>
+				<form onSubmit={this.handleSubmit}>
+					<h2>Register</h2>
 
-						<p>
-							or <Link to="/">Login to your account</Link>
-						</p>
+					<p>
+						or <Link to="/">Login to your account</Link>
+					</p>
 
-						<Field
-							id="firstName"
-							value={this.state.firstName}
-							required
-							placeholder="First name"
-							onChange={this.handleChange}
-						/>
+					<Field
+						id="firstName"
+						value={this.state.firstName}
+						required
+						placeholder="First name"
+						onChange={this.handleChange}
+					/>
 
-						<Field
-							id="lastName"
-							value={this.state.lastName}
-							required
-							placeholder="Last name"
-							onChange={this.handleChange}
-						/>
+					<Field
+						id="lastName"
+						value={this.state.lastName}
+						required
+						placeholder="Last name"
+						onChange={this.handleChange}
+					/>
 
-						<Field
-							id="dob"
-							type="date"
-							value={this.state.dob}
-							required
-							placeholder="Date of birth"
-							onChange={this.handleChange}
-						/>
+					<Field
+						id="dob"
+						type="date"
+						value={this.state.dob}
+						required
+						placeholder="Date of birth"
+						onChange={this.handleChange}
+					/>
 
-						<Field
-							id="country"
-							type="text"
-							value={this.state.country}
-							required
-							placeholder="Country"
-							onChange={this.handleChange}
-						/>
+					<Field
+						id="country"
+						type="text"
+						value={this.state.country}
+						required
+						placeholder="Country"
+						onChange={this.handleChange}
+					/>
 
-						<Field
-							id="email"
-							type="email"
-							value={this.state.email}
-							required
-							placeholder="Email address"
-							onChange={this.handleChange}
-						/>
+					<Field
+						id="email"
+						type="email"
+						value={this.state.email}
+						required
+						placeholder="Email address"
+						onChange={this.handleChange}
+					/>
 
-						<Field
-							id="password"
-							type="password"
-							value={this.state.password}
-							required
-							placeholder="Password"
-							onChange={this.handleChange}
-						/>
+					<Field
+						id="password"
+						type="password"
+						value={this.state.password}
+						required
+						placeholder="Password"
+						onChange={this.handleChange}
+					/>
 
-						<Button type="submit">Register</Button>
-					</form>
-				</Shell>
+					<Button type="submit">Register</Button>
+				</form>
 			</div>
 		);
 	}

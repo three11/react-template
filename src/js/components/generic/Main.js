@@ -7,9 +7,9 @@ import { Route, Switch } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-import Login from '_components/pages/login/Page';
-import Register from '_components/pages/register/Page';
-import ProfilePage from '_components/pages/profile/Page';
+import Login from '@components/pages/login/Page';
+import Register from '@components/pages/register/Page';
+import ProfilePage from '@components/pages/profile/Page';
 
 /**
  * Render the component
@@ -32,11 +32,7 @@ const Main = props => {
 						exact
 						path="/"
 						render={() => {
-							return props.auth.logged ? (
-								<ProfilePage {...props} />
-							) : (
-								<Login {...props} />
-							);
+							return props.auth.logged ? <ProfilePage {...props} /> : <Login {...props} />;
 						}}
 					/>
 					<Route

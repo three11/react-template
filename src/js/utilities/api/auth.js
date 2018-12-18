@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import { authInitialState } from '_store/modules/auth/index';
+import { authInitialState } from '@store/modules/auth/index';
 
 /**
  * Predefined users list
@@ -12,8 +12,7 @@ export const users = [
 		id: 1,
 		data: {
 			fullname: 'Julianna Doe',
-			avatar:
-				'https://pickaface.net/gallery/avatar/20160107_232855_2539_Julianna.png',
+			avatar: 'https://pickaface.net/gallery/avatar/20160107_232855_2539_Julianna.png',
 			details: {
 				email: 'julianna.doe@gmail.com',
 				dob: '1980-07-20',
@@ -28,8 +27,7 @@ export const users = [
 		id: 2,
 		data: {
 			fullname: 'John Doe',
-			avatar:
-				'https://pickaface.net/gallery/avatar/unr_sample_161118_2054_ynlrg.png',
+			avatar: 'https://pickaface.net/gallery/avatar/unr_sample_161118_2054_ynlrg.png',
 			details: {
 				email: 'john.doe@gmail.com',
 				dob: '1970-12-25',
