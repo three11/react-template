@@ -1,13 +1,14 @@
 const path = require('path');
 const magicImporter = require('node-sass-magic-importer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const { DefinePlugin } = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
 
 const resolve = path.resolve.bind(__dirname);
+
 const PATHS = {
 	root: resolve('./'),
 	src: resolve('./src'),
@@ -31,6 +32,12 @@ const babelConfig = {
 			cacheDirectory: true
 		}
 	}
+};
+
+const hotConfig = {
+	test: /\.(js|jsx)$/,
+	include: /node_modules/,
+	use: ['react-hot-loader/webpack']
 };
 
 const tsConfig = isDev => ({
@@ -67,7 +74,7 @@ const htmlConfig = {
 const cssConfig = isDev => ({
 	test: /(\.css|\.scss)$/,
 	use: [
-		...(isDev ? [] : [MiniCssExtractPlugin.loader]),
+		...(isDev ? ['style-loader'] : [MiniCssExtractPlugin.loader]),
 		{
 			loader: 'css-loader',
 			options: {
@@ -126,12 +133,10 @@ module.exports = (env = {}) => {
 		output: {
 			path: PATHS.dist,
 			filename: isDev ? '[name].js' : '[name].[chunkhash].bundle.js',
-			sourceMapFilename: isDev ? '[name].bundle.map' : '[name].[chunkhash].bundle.map',
-			chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',
 			publicPath: '/'
 		},
 		module: {
-			rules: [babelConfig, tsConfig(isDev), htmlConfig, cssConfig(isDev), assetsConfig, svgConfig]
+			rules: [babelConfig, hotConfig, tsConfig(isDev), htmlConfig, cssConfig(isDev), assetsConfig, svgConfig]
 		},
 		resolve: {
 			alias: {
@@ -193,16 +198,13 @@ module.exports = (env = {}) => {
 							chunkFilename: isDev ? '[name].css' : '[name].[hash].css'
 						})
 				  ]
-				: [])
+				: [new HotModuleReplacementPlugin()])
 		],
 		cache: true,
 		bail: false,
-		devtool: isDev ? 'eval-source-map' : 'source-map',
+		devtool: isDev ? 'eval-source-map' : false,
 		devServer: {
-			hot: true,
 			noInfo: true,
-			hotOnly: true,
-			overlay: true,
 			historyApiFallback: true
 		},
 		stats: 'errors-only'

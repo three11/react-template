@@ -4,7 +4,7 @@
 	"description": "Starter template for React applications",
 	"main": "./src/js/bootstrap.js",
 	"scripts": {
-		"start": "webpack-dev-server --mode development --open --hot --env.dev",
+		"start": "webpack-dev-server --mode development --open --env.dev",
 		"build": "webpack --mode production",
 		"tslint": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'"
 	},

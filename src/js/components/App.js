@@ -14,7 +14,7 @@ import Main from '@components/generic/Main';
 /**
  * Component stylesheet
  */
-import '@styles/App.scss';
+import '@styles/app.scss';
 
 /**
  * Convert store's state to component props
