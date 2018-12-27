@@ -8,9 +8,9 @@ const PATHS = {
 	src: resolve('./src'),
 	root: resolve('./'),
 	assets: resolve('./src/assets'),
-	utilities: resolve('./src/js/utilities'),
-	components: resolve('./src/js/components'),
-	containers: resolve('./src/js/containers')
+	utilities: resolve('./src/utilities'),
+	components: resolve('./src/components'),
+	containers: resolve('./src/containers')
 };
 
 const babelConfig = {
@@ -64,7 +64,7 @@ module.exports = (env = {}) => {
 	const isDev = env.dev;
 
 	return {
-		entry: ['./src/js/index.js'],
+		entry: ['./src/index.js'],
 		output: {
 			path: PATHS.dist,
 			filename: isDev ? '[name].js' : '[name].[chunkhash].bundle.js',
