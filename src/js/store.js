@@ -4,6 +4,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import sagas from './sagas';
 import reducers from './reducers';
 
+import { counterInitialState } from '@containers/Home/reducer';
+
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -25,4 +27,6 @@ const configureStore = (initialState = {}) => {
 	return store;
 };
 
-export default configureStore;
+export default configureStore({
+	counter: counterInitialState
+});

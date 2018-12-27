@@ -4,13 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from '@containers/App';
-import configureStore from './store';
-
-import { counterInitialState } from '@containers/Home/reducer';
-
-const store = configureStore({
-	counter: counterInitialState
-});
+import store from './store';
 
 const node = document.getElementById('app');
 const router = Application => (
