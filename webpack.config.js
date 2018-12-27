@@ -1,26 +1,16 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
 
 const resolve = path.resolve.bind(__dirname);
 
 const PATHS = {
-	root: resolve('./'),
 	src: resolve('./src'),
-	dist: resolve('./dist'),
-	store: resolve('./src/js/store'),
-	sagas: resolve('./src/js/store/sagas'),
+	root: resolve('./'),
 	assets: resolve('./src/assets'),
-	styles: resolve('./src/styles'),
-	constants: resolve('./src/js/constants'),
 	utilities: resolve('./src/js/utilities'),
 	components: resolve('./src/js/components'),
-	containers: resolve('./src/js/containers'),
-	nodeModules: resolve('./node_modules')
+	containers: resolve('./src/js/containers')
 };
 
 const babelConfig = {
@@ -32,12 +22,6 @@ const babelConfig = {
 			cacheDirectory: true
 		}
 	}
-};
-
-const hotConfig = {
-	test: /\.(js|jsx)$/,
-	include: /node_modules/,
-	use: ['react-hot-loader/webpack']
 };
 
 const htmlConfig = {
@@ -87,22 +71,16 @@ module.exports = (env = {}) => {
 			publicPath: '/'
 		},
 		module: {
-			rules: [babelConfig, hotConfig, htmlConfig, cssConfig, assetsConfig, svgConfig]
+			rules: [babelConfig, htmlConfig, cssConfig, assetsConfig, svgConfig]
 		},
 		resolve: {
 			alias: {
-				'@root': PATHS.root,
 				'@src': PATHS.src,
-				'@dist': PATHS.dist,
-				'@store': PATHS.store,
-				'@sagas': PATHS.sagas,
+				'@root': PATHS.root,
 				'@assets': PATHS.assets,
-				'@styles': PATHS.styles,
-				'@constants': PATHS.constants,
 				'@utilities': PATHS.utilities,
 				'@components': PATHS.components,
-				'@containers': PATHS.containers,
-				'@nodeModules': PATHS.nodeModules
+				'@containers': PATHS.containers
 			},
 			extensions: ['*', '.js', '.jsx'],
 			modules: ['src', 'node_modules']
@@ -118,13 +96,6 @@ module.exports = (env = {}) => {
 					NODE_ENV: JSON.stringify(isDev ? 'development' : 'production')
 				}
 			}),
-			new CopyWebpackPlugin([
-				// Update these when needed
-				// {
-				//     from: 'src/manifest.json',
-				//     to: 'manifest.json',
-				// }
-			]),
 			...(isDev ? [new HotModuleReplacementPlugin()] : [])
 		],
 		cache: true,

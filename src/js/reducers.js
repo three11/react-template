@@ -1,9 +1,9 @@
 import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
 
-import auth from '@store/modules/auth/reducer';
+import counter from '@containers/Home/reducer';
 
 export default combineReducers({
-	auth,
+	counter,
 	routing: routerReducer
 });

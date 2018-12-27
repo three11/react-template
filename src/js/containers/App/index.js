@@ -1,9 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 import 'normalize.css';
 
-import Main from '@components/Main';
+import Home from '@containers/Home';
+import NotFound from '@containers/NotFound';
 
-export default withRouter(connect(state => state)(Main));
+export default withRouter(
+	connect(state => state)(props => (
+		<Switch>
+			<Route exact path="/" render={() => <Home {...props} />} />
+			<Route path="" render={() => <NotFound {...props} />} />
+		</Switch>
+	))
+);

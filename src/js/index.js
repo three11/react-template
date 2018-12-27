@@ -4,13 +4,15 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from '@containers/App';
-import configureStore from '@store/store';
-import { authInitialState } from '@store/modules/auth';
+import configureStore from './store';
 
-const store = configureStore({ ...authInitialState });
+import { counterInitialState } from '@containers/Home/reducer';
+
+const store = configureStore({
+	counter: counterInitialState
+});
 
 const node = document.getElementById('app');
-
 const router = Application => (
 	<Provider store={store}>
 		<BrowserRouter>
@@ -19,9 +21,6 @@ const router = Application => (
 	</Provider>
 );
 
-/**
- * Render the application
- */
 render(router(App), node);
 
 if (module.hot) {

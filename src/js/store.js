@@ -1,21 +1,20 @@
 import createSagaMiddleware from 'redux-saga';
 import { createStore, compose, applyMiddleware } from 'redux';
 
-import sagas from '@sagas';
-import rootReducer from '@store/rootReducer';
+import sagas from './sagas';
+import reducers from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const configureStore = (initialState = {}) => {
-	const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(sagaMiddleware)));
+	const store = createStore(reducers, initialState, composeEnhancers(applyMiddleware(sagaMiddleware)));
 
 	if (module.hot) {
-		module.hot.accept('@store/rootReducer', () => {
-			const nextRootReducer = require('@store/rootReducer').default;
+		module.hot.accept('./reducers', () => {
+			const nextReducers = require('./reducers').default;
 
-			store.replaceReducer(nextRootReducer);
+			store.replaceReducer(nextReducers);
 		});
 	}
 
