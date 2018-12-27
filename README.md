@@ -65,20 +65,15 @@ npm run build
 
 1.  Folder structure:
 
-    -   `components/`
-        -   `generic/`
-        -   `pages/`
-        -   `App.js`
-    -   `constants/`
-    -   `store/`
-        -   `modules/`
-            -   `...`
-        -   `sagas/`
-            -   `...`
-            -   `index.js`
-    -   `utilities/`
-        -   `...`
-    -   `bootstrap.js`
+    -   `assets/` - all fonts, images, videos, etc.
+    -   `components/` - stateless components.
+    -   `containers/` - statefull components.
+    -   `utilities/` - helpers and utility functions
+    -   `index.html`
+    -   `index.js`
+    -   `reducers.js`
+    -   `sagas.js`
+    -   `store.js`
 
 2.  Latest EcmaScript support
 
@@ -86,35 +81,9 @@ npm run build
     -   Using [Babel](https://github.com/babel/babel) to transpile to ES5
     -   Minification of the bundled file
     -   Source maps
-    -   Optional Typescript support
 
 3.  Webpack aliases: Checkout the aliases property in the `webpack.config.js` file.
-
-### CSS
-
-1.  [SASS](http://sass-lang.com/) stylesheets preprocessing
-
-    -   The SASS file/folder structure utilizes the ITCSS pattern as shown and explained [here](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
-    -   Glob import in SASS thanks to [node-sass-magic-importer](https://github.com/maoberlehner/node-sass-magic-importer)
-
-2.  [PostCSS](https://github.com/postcss/postcss) stylesheets postprocessing including:
-
-    -   [easy importing](https://github.com/TrySound/postcss-easy-import) of non-sass files
-    -   [url rebase](https://github.com/postcss/postcss-url) - locates and copies assets from `node_modules`
-    -   [postcss-utilities](https://github.com/ismamz/postcss-utilities) - allows usage of utility mixins such as `clearfix`
-    -   [flexbox bugs](https://github.com/luisrudge/postcss-flexbugs-fixes) - fixes common flexbox issues on Internet Explorer
-    -   [css minification](http://cssnano.co/) - minifies the bundles stylesheet
-    -   [automatic vendor prefixes](https://github.com/postcss/autoprefixer)
-
-        > "Write your CSS rules without vendor prefixes (in fact, forget about them entirely)"
-
-### Assets
-
-Images, Fonts, etc should be placed inside the `src/assets` folder.
-
-The `src/index.html` file is the template file for the HTML of the app. It can be used to add meta, link, script tags, etc.
-
-The bundled stylesheet and javascript files are automatically inserted by Webpack.
+4.  CSS in JS using `styled-components`
 
 ## Supported Browsers
 
