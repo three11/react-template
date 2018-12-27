@@ -2,7 +2,6 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/three11/react-template.svg)](https://github.com/three11/react-template/commits/master)
 [![Build Status](https://travis-ci.org/three11/react-template.svg?branch=master)](https://travis-ci.org/three11/react-template)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/localga/README.md)](https://github.com/scriptex/localga/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/three11/react-template.svg)](https://greenkeeper.io/)
 
 # React Template
 
