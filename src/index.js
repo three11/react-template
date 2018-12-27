@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import App from '@containers/App';
 import store from './store';
 
+import '@assets/favicon.ico';
+
 const node = document.getElementById('app');
 const router = Application => (
 	<Provider store={store}>
@@ -23,4 +25,8 @@ if (module.hot) {
 	const NextApp = require('@containers/App').default;
 
 	render(router(NextApp), node);
+}
+
+if (process.env.NODE_ENV === 'production') {
+	require('offline-plugin/runtime').install(); // eslint-disable-line global-require
 }

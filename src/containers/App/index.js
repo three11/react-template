@@ -6,12 +6,16 @@ import 'normalize.css';
 
 import Home from '@containers/Home';
 import NotFound from '@containers/NotFound';
+import GlobalStyles from './styles';
 
 export default withRouter(
 	connect(state => state)(props => (
-		<Switch>
-			<Route exact path="/" render={() => <Home {...props} />} />
-			<Route path="" render={() => <NotFound {...props} />} />
-		</Switch>
+		<React.Fragment>
+			<Switch>
+				<Route exact path="/" render={() => <Home {...props} />} />
+				<Route path="" render={() => <NotFound {...props} />} />
+			</Switch>
+			<GlobalStyles />
+		</React.Fragment>
 	))
 );
