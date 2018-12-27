@@ -1,5 +1,4 @@
 const path = require('path');
-const magicImporter = require('node-sass-magic-importer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -20,6 +19,7 @@ const PATHS = {
 	constants: resolve('./src/js/constants'),
 	utilities: resolve('./src/js/utilities'),
 	components: resolve('./src/js/components'),
+	containers: resolve('./src/js/containers'),
 	nodeModules: resolve('./node_modules')
 };
 
@@ -40,25 +40,6 @@ const hotConfig = {
 	use: ['react-hot-loader/webpack']
 };
 
-const tsConfig = isDev => ({
-	test: /\.(tsx|ts)?$/,
-	include: [PATHS.src, PATHS.nodeModules],
-	use: [
-		{
-			loader: 'ts-loader',
-			options: {
-				transpileOnly: true,
-				compilerOptions: {
-					sourceMap: isDev,
-					target: 'es5',
-					isolatedModules: true,
-					noEmitOnError: false
-				}
-			}
-		}
-	]
-});
-
 const htmlConfig = {
 	test: /\.html$/,
 	use: [
@@ -71,40 +52,10 @@ const htmlConfig = {
 	]
 };
 
-const cssConfig = isDev => ({
-	test: /(\.css|\.scss)$/,
-	use: [
-		...(isDev ? ['style-loader'] : [MiniCssExtractPlugin.loader]),
-		{
-			loader: 'css-loader',
-			options: {
-				sourceMap: isDev
-			}
-		},
-		{
-			loader: 'postcss-loader',
-			options: {
-				plugins: [
-					require('postcss-easy-import'),
-					require('postcss-url')({
-						url: 'rebase'
-					}),
-					require('postcss-utilities'),
-					require('postcss-flexbugs-fixes'),
-					require('autoprefixer')()
-				],
-				sourceMap: isDev
-			}
-		},
-		{
-			loader: 'sass-loader',
-			options: {
-				importer: magicImporter(),
-				sourceMap: isDev
-			}
-		}
-	]
-});
+const cssConfig = {
+	test: /\.css$/,
+	use: ['style-loader', 'css-loader']
+};
 
 const assetsConfig = {
 	test: /\.(jpe?g|gif|png|woff2?|ttf|eot|wav|mp3|mp4)(\?.*$|$)/,
@@ -129,14 +80,14 @@ module.exports = (env = {}) => {
 	const isDev = env.dev;
 
 	return {
-		entry: ['react-hot-loader/patch', './src/js/bootstrap.js'],
+		entry: ['./src/js/index.js'],
 		output: {
 			path: PATHS.dist,
 			filename: isDev ? '[name].js' : '[name].[chunkhash].bundle.js',
 			publicPath: '/'
 		},
 		module: {
-			rules: [babelConfig, hotConfig, tsConfig(isDev), htmlConfig, cssConfig(isDev), assetsConfig, svgConfig]
+			rules: [babelConfig, hotConfig, htmlConfig, cssConfig, assetsConfig, svgConfig]
 		},
 		resolve: {
 			alias: {
@@ -150,34 +101,17 @@ module.exports = (env = {}) => {
 				'@constants': PATHS.constants,
 				'@utilities': PATHS.utilities,
 				'@components': PATHS.components,
+				'@containers': PATHS.containers,
 				'@nodeModules': PATHS.nodeModules
 			},
-			extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+			extensions: ['*', '.js', '.jsx'],
 			modules: ['src', 'node_modules']
 		},
-		optimization: {
-			minimizer: isDev
-				? []
-				: [
-						new UglifyJsPlugin({
-							cache: true,
-							parallel: true,
-							sourceMap: true
-						}),
-						new OptimizeCSSAssetsPlugin({
-							cssProcessor: require('cssnano'),
-							cssProcessorOptions: {
-								reduceIdents: false,
-								safe: true
-							}
-						})
-				  ]
-		},
-
 		plugins: [
 			new HtmlWebPackPlugin({
 				template: './src/index.html',
-				filename: './index.html'
+				filename: './index.html',
+				inject: true
 			}),
 			new DefinePlugin({
 				'process.env': {
@@ -191,22 +125,20 @@ module.exports = (env = {}) => {
 				//     to: 'manifest.json',
 				// }
 			]),
-			...(!isDev
-				? [
-						new MiniCssExtractPlugin({
-							filename: isDev ? '[name].css' : '[name].[hash].css',
-							chunkFilename: isDev ? '[name].css' : '[name].[hash].css'
-						})
-				  ]
-				: [new HotModuleReplacementPlugin()])
+			...(isDev ? [new HotModuleReplacementPlugin()] : [])
 		],
 		cache: true,
 		bail: false,
 		devtool: isDev ? 'eval-source-map' : false,
 		devServer: {
 			noInfo: true,
-			historyApiFallback: true
+			historyApiFallback: true,
+			contentBase: './dist',
+			hot: true
 		},
-		stats: 'errors-only'
+		stats: 'errors-only',
+		performance: {
+			hints: false
+		}
 	};
 };

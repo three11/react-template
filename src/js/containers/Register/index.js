@@ -1,25 +1,12 @@
-/**
- * External dependencies
- */
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-/**
- * Internal dependencies
- */
-import Field from '@components/generic/Field';
-import Button from '@components/generic/Button';
+import Field from '@components/Field';
+import Button from '@components/Button';
 import { users } from '@utilities/api/auth';
 import { signInRequest } from '@store/modules/auth';
 
-/**
- * Render the component
- */
-class Register extends Component {
-	/**
-	 * Initial component state
-	 * @TODO: Try to do something clever with the password
-	 */
+export default class extends React.Component {
 	state = {
 		firstName: '',
 		lastName: '',
@@ -29,21 +16,7 @@ class Register extends Component {
 		password: ''
 	};
 
-	/**
-	 * In order to gain access to `this` a
-	 * constructor defimition is required.
-	 */
-	constructor(props) {
-		super(props);
-
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
-
-	/**
-	 * Submit the form
-	 */
-	handleSubmit(event) {
+	handleSubmit = event => {
 		event.preventDefault();
 
 		const data = this.state;
@@ -73,20 +46,14 @@ class Register extends Component {
 		);
 
 		this.props.history.push('/');
-	}
+	};
 
-	/**
-	 * Watch fields for change and populate state
-	 */
-	handleChange(event) {
+	handleChange = event => {
 		const { id, value } = event.target;
 
 		this.setState({ [id]: value });
-	}
+	};
 
-	/**
-	 * Render it
-	 */
 	render() {
 		return (
 			<div className="c-register">
@@ -155,5 +122,3 @@ class Register extends Component {
 		);
 	}
 }
-
-export default Register;

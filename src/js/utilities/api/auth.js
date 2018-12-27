@@ -1,12 +1,5 @@
-/**
- * Internal dependencies
- */
 import { authInitialState } from '@store/modules/auth/index';
 
-/**
- * Predefined users list
- * @type {Array}
- */
 export const users = [
 	{
 		id: 1,
@@ -40,32 +33,18 @@ export const users = [
 	}
 ];
 
-/**
- * Copy the settings
- * @type {Object}
- */
 export const settings = {
 	...authInitialState.auth
 };
 
-/**
- * Save user details to localStorage
- * @param  {Object} user
- */
 export const saveUser = user => {
 	localStorage.setItem('logged_in_user', JSON.stringify(user));
 };
 
-/**
- * Remove user details from localStorage
- */
 export const removeUser = () => {
 	localStorage.removeItem('logged_in_user');
 };
 
-/**
- * Fetch user data
- */
 export const fetchData = data => {
 	const user = users.filter(item => item.data.details.email === data.email);
 	const auth = {
@@ -86,9 +65,6 @@ export const fetchData = data => {
 	};
 };
 
-/**
- * Log the user out
- */
 export const logOut = () => {
 	removeUser();
 
