@@ -8,7 +8,7 @@ import { INCREMENT_ASYNC, DECREMENT_ASYNC } from './constants';
 import * as ReactLogo from '@assets/react.svg';
 import ReduxSagaLogo from '@assets/redux-saga.png';
 
-export default ({ counter, dispatch }) => (
+const HomePage = ({ counter, dispatch }) => (
 	<React.Fragment>
 		<img
 			src={ReactLogo}
@@ -30,3 +30,5 @@ export default ({ counter, dispatch }) => (
 		<img src={ReduxSagaLogo} alt="Redux Saga Logo" style={{ display: 'block', margin: '2rem auto' }} />
 	</React.Fragment>
 );
+
+export default HomePage;

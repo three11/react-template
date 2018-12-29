@@ -9,9 +9,11 @@ const Title = styled.h1`
 	text-align: center;
 `;
 
-export default _ => (
+const NotFoundPage = () => (
 	<Title>
 		404 <br />
 		Page not found
 	</Title>
 );
+
+export default NotFoundPage;
