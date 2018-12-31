@@ -1,12 +1,14 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
+
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
- 
+
 const resolve = path.resolve.bind(__dirname);
- 
+
 const PATHS = {
 	src: resolve('./src'),
 	root: resolve('./'),
@@ -15,7 +17,7 @@ const PATHS = {
 	components: resolve('./src/components'),
 	containers: resolve('./src/containers')
 };
- 
+
 const babelConfig = {
 	test: /\.(js|jsx)$/,
 	exclude: /node_modules/,
@@ -26,7 +28,7 @@ const babelConfig = {
 		}
 	}
 };
- 
+
 const htmlConfig = {
 	test: /\.html$/,
 	use: [
@@ -38,31 +40,32 @@ const htmlConfig = {
 		}
 	]
 };
- 
+
 const cssConfig = {
 	test: /\.css$/,
 	use: ['style-loader', 'css-loader']
 };
- 
+
 const fontsConfig = {
 	test: /\.(eot|otf|ttf|woff|woff2)$/,
 	use: 'file-loader'
 };
- 
+
 const svgConfig = {
 	test: /\.svg$/,
 	use: [
 		{
-			loader: 'svg-url-loader',
+			loader: 'babel-loader'
+		},
+		{
+			loader: 'react-svg-loader',
 			options: {
-				limit: 10 * 1024,
-				noquotes: true,
-				encoding: 'none'
+				jsx: true
 			}
 		}
 	]
 };
- 
+
 const imagesConfig = {
 	test: /\.(jpg|png|gif|ico)$/,
 	use: [
@@ -94,7 +97,7 @@ const imagesConfig = {
 		}
 	]
 };
- 
+
 const mediaConfig = {
 	test: /\.(mp3|mp4|webm)$/,
 	use: {
@@ -104,10 +107,10 @@ const mediaConfig = {
 		}
 	}
 };
- 
+
 module.exports = (env = {}) => {
 	const isDev = env.dev;
- 
+
 	return {
 		entry: ['./src/index.js'],
 		output: {
