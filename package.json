@@ -1,11 +1,11 @@
 {
 	"name": "@three11/react-template",
-	"version": "0.1.0",
-	"description": "Starter template for React applications",
-	"main": "./src/js/index.js",
+	"version": "1.0.0",
+	"description": "Scalable starter boilerplate for React applications",
+	"main": "./src/index.js",
 	"scripts": {
 		"start": "webpack-dev-server --mode development --open --env.dev",
-		"build": "webpack --mode production",
+		"build": "rm -rf ./dist && webpack --mode production",
 		"lint": "npm run lint:js && npm run lint:css && npm run lint:scss",
 		"lint:js": "eslint './src/**/*.js'",
 		"lint:css": "stylelint './src/**/*.js' --config .stylelintrc",
