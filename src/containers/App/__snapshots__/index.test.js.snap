@@ -16,13 +16,13 @@ Array [
     className="styles__Wrapper-dhcWqx bdfcP"
   >
     <button
-      className="styles__Button-fDHFLd iNobO"
+      className="btn "
       onClick={[Function]}
     >
       -
     </button>
     <button
-      className="styles__Button-fDHFLd iNobO"
+      className="btn "
       onClick={[Function]}
     >
       Async -
@@ -31,13 +31,13 @@ Array [
       0
     </small>
     <button
-      className="styles__Button-fDHFLd iNobO"
+      className="btn "
       onClick={[Function]}
     >
       Async +
     </button>
     <button
-      className="styles__Button-fDHFLd iNobO"
+      className="btn "
       onClick={[Function]}
     >
       +
