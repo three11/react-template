@@ -1,11 +1,15 @@
 import React from 'react';
 
-import { Button } from './styles';
+import './index.scss';
 
-const StyledButton = ({ type, children, ...rest }) => (
-	<Button type={type} {...rest}>
-		{children}
-	</Button>
-);
+const StyledButton = ({ type, children, className, ...rest }) => {
+	const classNames = ['btn'].concat(className.split(' ')).join(' ');
+
+	return (
+		<button className={classNames} type={type} {...rest}>
+			{children}
+		</button>
+	);
+};
 
 export default StyledButton;

@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
 
 const resolve = path.resolve.bind(__dirname);
@@ -41,9 +42,41 @@ const htmlConfig = {
 	]
 };
 
+const postcssPlugins = [
+	require('postcss-easy-import'),
+	require('postcss-url')({
+		url: 'rebase'
+	}),
+	require('postcss-utilities'),
+	require('postcss-flexbugs-fixes'),
+	require('autoprefixer')()
+];
+
 const cssConfig = {
-	test: /\.css$/,
-	use: ['style-loader', 'css-loader']
+	test: /(\.css|\.scss)$/,
+	use: ['css-hot-loader'].concat(
+		MiniCssExtractPlugin.loader,
+		'css-loader',
+		{
+			loader: 'postcss-loader',
+			options: {
+				plugins: loader => {
+					if (!loader.hot) {
+						postcssPlugins.push(
+							require('cssnano')({
+								discardComments: {
+									removeAll: true
+								}
+							})
+						);
+					}
+
+					return postcssPlugins;
+				}
+			}
+		},
+		'sass-loader'
+	)
 };
 
 const fontsConfig = {
@@ -160,6 +193,10 @@ module.exports = (env = {}) => {
 				'process.env': {
 					NODE_ENV: JSON.stringify(isDev ? 'development' : 'production')
 				}
+			}),
+			new MiniCssExtractPlugin({
+				filename: isDev ? '[name].css' : '[name].[hash].css',
+				chunkFilename: isDev ? '[id].css' : '[id].[hash].css'
 			}),
 			...(isDev
 				? [new HotModuleReplacementPlugin()]

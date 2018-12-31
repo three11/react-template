@@ -15,15 +15,23 @@ const HomePage = ({ counter, dispatch }) => (
 		<ReactLogo width={200} height={200} style={imageStyle} />
 
 		<Wrapper>
-			<Button onClick={() => dispatch(decrement())}>-</Button>
+			<Button className="mitko vasko" onClick={() => dispatch(decrement())}>
+				-
+			</Button>
 
-			<Button onClick={() => dispatch({ type: DECREMENT_ASYNC })}>Async -</Button>
+			<Button className="mitko vasko" onClick={() => dispatch({ type: DECREMENT_ASYNC })}>
+				Async -
+			</Button>
 
 			<small>{counter.count}</small>
 
-			<Button onClick={() => dispatch({ type: INCREMENT_ASYNC })}>Async +</Button>
+			<Button className="mitko vasko" onClick={() => dispatch({ type: INCREMENT_ASYNC })}>
+				Async +
+			</Button>
 
-			<Button onClick={() => dispatch(increment())}>+</Button>
+			<Button className="mitko vasko" onClick={() => dispatch(increment())}>
+				+
+			</Button>
 		</Wrapper>
 
 		<img src={ReduxSagaLogo} alt="Redux Saga Logo" style={imageStyle} />

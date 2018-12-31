@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const Button = styled.button`
+.btn {
 	font-family: sans-serif;
 	font-size: 1rem;
 	line-height: 1.25;
@@ -19,4 +17,4 @@ export const Button = styled.button`
 		color: white;
 		background: black;
 	}
-`;
+}
