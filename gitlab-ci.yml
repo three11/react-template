@@ -1,4 +1,4 @@
-image: node:8.9.4
+image: node:8.15.0
 
 before_script:
     - npm install
@@ -10,3 +10,5 @@ cache:
 build:
     script:
         - npm run build
+        - npm run lint
+        - npm run test
