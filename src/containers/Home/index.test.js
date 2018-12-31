@@ -6,7 +6,7 @@ import HomePage from '.';
 
 describe('HomePage component', () => {
 	it('should render successfully', () => {
-		const tree = renderer.create(HomePage).toJSON();
+		const tree = renderer.create(<HomePage counter={{ count: 0 }} dispatch={() => ({})} />).toJSON();
 
 		expect(tree).toMatchSnapshot();
 	});

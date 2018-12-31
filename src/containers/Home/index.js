@@ -5,16 +5,15 @@ import { Wrapper } from './styles';
 import { increment, decrement } from './actions';
 import { INCREMENT_ASYNC, DECREMENT_ASYNC } from './constants';
 
-import * as ReactLogo from '@assets/react.svg';
+import ReactLogo from '@assets/react.svg';
 import ReduxSagaLogo from '@assets/redux-saga.png';
+
+const imageStyle = { display: 'block', margin: 'auto' };
 
 const HomePage = ({ counter, dispatch }) => (
 	<React.Fragment>
-		<img
-			src={ReactLogo}
-			alt="React Logo"
-			style={{ width: '20rem', height: 'auto', display: 'block', margin: '2rem auto' }}
-		/>
+		<ReactLogo width={200} height={200} style={imageStyle} />
+
 		<Wrapper>
 			<Button onClick={() => dispatch(decrement())}>-</Button>
 
@@ -27,7 +26,7 @@ const HomePage = ({ counter, dispatch }) => (
 			<Button onClick={() => dispatch(increment())}>+</Button>
 		</Wrapper>
 
-		<img src={ReduxSagaLogo} alt="Redux Saga Logo" style={{ display: 'block', margin: '2rem auto' }} />
+		<img src={ReduxSagaLogo} alt="Redux Saga Logo" style={imageStyle} />
 	</React.Fragment>
 );
 

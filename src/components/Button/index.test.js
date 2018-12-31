@@ -6,7 +6,7 @@ import Button from '.';
 
 describe('Button component', () => {
 	it('should render successfully', () => {
-		const tree = renderer.create(Button).toJSON();
+		const tree = renderer.create(<Button />).toJSON();
 
 		expect(tree).toMatchSnapshot();
 	});
