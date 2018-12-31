@@ -5,13 +5,13 @@
 
 # React Template
 
-Opinionated React starter template using Redux, React Router, Redux Saga and more.
+Opinionated React starter template using Redux, React Router, Redux Saga, Styled Components, SCSS, PostCSS and more.
 
 ## Dependencies
 
 In order to use this setup you need to have installed the following dependencies:
 
-1.  Node - min v8.9.4
+1.  Node - min v8.15.0
 2.  NPM - min v5.6.0
     or
 3.  Yarn - min v1.3.2
@@ -27,11 +27,9 @@ Then navigate to the `react-template` folder and proceed with the rest of the in
 
 ```sh
 yarn
-```
 
-or
+#or
 
-```sh
 npm i
 ```
 
@@ -39,11 +37,9 @@ npm i
 
 ```sh
 yarn start
-```
 
-or
+# or
 
-```sh
 npm start
 ```
 
@@ -51,11 +47,9 @@ npm start
 
 ```sh
 yarn build
-```
 
-or
+# or
 
-```sh
 npm run build
 ```
 
@@ -83,7 +77,12 @@ npm run build
     -   Source maps
 
 3.  Webpack aliases: Checkout the aliases property in the `webpack.config.js` file.
-4.  CSS in JS using `styled-components`
+4.  Choose your style: CSS in JS using `styled-components` or SCSS files.
+5.  Lint your files: ESLint and Stylelint included
+6.  Tests using Jest. The Test environment has been configured so you don't have to
+7.  Offline first - using Offline Plugin to cache important files and assets
+8.  PWA ready - Install as a native app on Android and iOS
+9.  Code splitting and lazy loading
 
 ## Supported Browsers
 
