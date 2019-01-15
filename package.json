@@ -111,7 +111,7 @@
 		"stylelint": "9.9.0",
 		"stylelint-config-recommended": "2.1.0",
 		"stylelint-config-styled-components": "0.1.1",
-		"stylelint-processor-styled-components": "1.5.1",
+		"stylelint-processor-styled-components": "1.5.2",
 		"terser-webpack-plugin": "1.2.1",
 		"url-loader": "1.1.2",
 		"webpack": "4.28.4",
