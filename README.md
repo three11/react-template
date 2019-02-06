@@ -28,7 +28,7 @@ Then navigate to the `react-template` folder and proceed with the rest of the in
 ```sh
 yarn
 
-#or
+# or
 
 npm i
 ```
