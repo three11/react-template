@@ -1,5 +1,4 @@
-import { delay } from 'redux-saga';
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery, delay } from 'redux-saga/effects';
 
 import { increment, decrement } from './actions';
 import { INCREMENT_ASYNC, DECREMENT_ASYNC } from './constants';

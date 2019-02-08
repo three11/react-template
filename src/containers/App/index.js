@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import 'normalize.css';
+import './index.scss';
 
 import Home from '@containers/Home';
 import NotFound from '@containers/NotFound';

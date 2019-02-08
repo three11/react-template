@@ -86,6 +86,7 @@ const fontsConfig = {
 
 const svgConfig = {
 	test: /\.svg$/,
+	issuer: /\.jsx?$/,
 	use: [
 		{
 			loader: 'babel-loader'
@@ -94,6 +95,19 @@ const svgConfig = {
 			loader: 'react-svg-loader',
 			options: {
 				jsx: true
+			}
+		}
+	]
+};
+
+const svgCSSConfig = {
+	test: /\.svg$/,
+	issuer: /\.s?css?$/,
+	use: [
+		{
+			loader: 'url-loader',
+			options: {
+				limit: 10 * 1024
 			}
 		}
 	]
@@ -153,7 +167,7 @@ module.exports = (env = {}) => {
 			publicPath: '/'
 		},
 		module: {
-			rules: [babelConfig, htmlConfig, cssConfig, fontsConfig, svgConfig, imagesConfig, mediaConfig]
+			rules: [babelConfig, htmlConfig, cssConfig, fontsConfig, svgConfig, svgCSSConfig, imagesConfig, mediaConfig]
 		},
 		resolve: {
 			alias: {
