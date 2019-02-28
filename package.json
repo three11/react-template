@@ -114,7 +114,7 @@
 		"stylelint-processor-styled-components": "1.5.2",
 		"terser-webpack-plugin": "1.2.3",
 		"url-loader": "1.1.2",
-		"webpack": "4.29.5",
+		"webpack": "4.29.6",
 		"webpack-cli": "3.2.3",
 		"webpack-dev-server": "3.2.1",
 		"webpack-hot-middleware": "2.24.3",
