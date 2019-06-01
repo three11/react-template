@@ -26,7 +26,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@7.4.5":
+"@babel/core@7.4.5", "@babel/core@^7.4.5":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.4.5.tgz#081f97e8ffca65a9b4b0fdc7e274e703f000c06a"
   integrity sha512-OvjIh6aqXtlsA8ujtGKfC7LYWksYSX8yQcM8Ay3LuvVeQ63lcOKgoZWVqcpFwkd29aYU9rVx7jxhfhiEDV9MZA==
@@ -62,26 +62,6 @@
     debug "^4.1.0"
     json5 "^2.1.0"
     lodash "^4.17.10"
-    resolve "^1.3.2"
-    semver "^5.4.1"
-    source-map "^0.5.0"
-
-"@babel/core@^7.4.4":
-  version "7.4.4"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.4.4.tgz#84055750b05fcd50f9915a826b44fa347a825250"
-  integrity sha512-lQgGX3FPRgbz2SKmhMtYgJvVzGZrmjaF4apZ2bLwofAKiSjxU0drPh4S/VasyYXwaTs+A1gvQ45BN8SQJzHsQQ==
-  dependencies:
-    "@babel/code-frame" "^7.0.0"
-    "@babel/generator" "^7.4.4"
-    "@babel/helpers" "^7.4.4"
-    "@babel/parser" "^7.4.4"
-    "@babel/template" "^7.4.4"
-    "@babel/traverse" "^7.4.4"
-    "@babel/types" "^7.4.4"
-    convert-source-map "^1.1.0"
-    debug "^4.1.0"
-    json5 "^2.1.0"
-    lodash "^4.17.11"
     resolve "^1.3.2"
     semver "^5.4.1"
     source-map "^0.5.0"
@@ -9381,12 +9361,12 @@ react-router@5.0.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-svg-core@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-svg-core/-/react-svg-core-3.0.1.tgz#bd2fc8fdef7f4786d985119c3324e6e6db5d52fd"
-  integrity sha512-4V1cXprbZePERYfQY6nkIso+rUaDp5oeMKI2X87bWHTekoMzom8YUKAoXC+TJ67TG4lPwL7N+UXc4IWGu9N1Dg==
+react-svg-core@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-svg-core/-/react-svg-core-3.0.2.tgz#a969aee80fabb1fd5a4da4157e849014f264cb68"
+  integrity sha512-BPq1mUeFnRBHhp6x7Rvfo3e2hZaODWbvlUt/I5eiQxd0Tib8HjNi160YKUXR8peDyu9fRb63qwSLsB0y40THVg==
   dependencies:
-    "@babel/core" "^7.4.4"
+    "@babel/core" "^7.4.5"
     "@babel/plugin-syntax-jsx" "^7.2.0"
     "@babel/preset-react" "^7.0.0"
     babel-plugin-react-svg "^3.0.1"
@@ -9394,13 +9374,13 @@ react-svg-core@^3.0.1:
     lodash.isplainobject "^4.0.6"
     svgo "^1.2.2"
 
-react-svg-loader@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-svg-loader/-/react-svg-loader-3.0.1.tgz#65b0359ad6f5af578497afaaeac686e7dc7c0f9c"
-  integrity sha512-43VG2S+aKwu7MIagxhzHyN9nPTJBatHL7RfIxyqQ2/voKXi0xkIOxvyfIt04G2HcVlDdxeq6CxyR1sZx+iL3Cw==
+react-svg-loader@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-svg-loader/-/react-svg-loader-3.0.2.tgz#6c24719d4e695620c107e3dda2fc4668c72e6d69"
+  integrity sha512-kS2Y/8Yph8XULde3r/oQL/IVXC04D4GIQ5hIg0SzINH/FRpi9PeHEtAOzpfXhCQcCrumRj4WCzns4XgV6YZTYA==
   dependencies:
     loader-utils "^1.2.3"
-    react-svg-core "^3.0.1"
+    react-svg-core "^3.0.2"
 
 react-test-renderer@16.8.6:
   version "16.8.6"
