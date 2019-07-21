@@ -90,7 +90,7 @@
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "enzyme-to-json": "3.3.5",
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "eslint-plugin-jest": "22.12.0",
     "eslint-plugin-react": "7.14.2",
     "file-loader": "4.1.0",
