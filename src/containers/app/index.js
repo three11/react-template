@@ -5,8 +5,8 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import 'normalize.css';
 import './index.scss';
 
-import Home from '@containers/Home';
-import NotFound from '@containers/NotFound';
+import Home from '@containers/home';
+import NotFound from '@containers/not-found';
 import GlobalStyles from './styles';
 
 export default withRouter(

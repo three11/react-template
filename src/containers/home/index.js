@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '@components/Button';
+import Button from '@components/button';
 import { Wrapper } from './styles';
 import { increment, decrement } from './actions';
 import { INCREMENT_ASYNC, DECREMENT_ASYNC } from './constants';

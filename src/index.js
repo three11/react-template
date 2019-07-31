@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from '@containers/App';
+import App from '@containers/app';
 import store from './store';
 
 import '@assets/favicon.ico';
