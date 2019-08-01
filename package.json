@@ -106,7 +106,7 @@
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
     "postcss-url": "8.0.0",
-    "postcss-utilities": "0.8.2",
+    "postcss-utilities": "0.8.4",
     "react-hot-loader": "4.12.10",
     "react-svg-loader": "3.0.3",
     "react-test-renderer": "16.8.6",
