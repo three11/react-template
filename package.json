@@ -1,166 +1,166 @@
 {
-	"name": "@three11/react-template",
-	"version": "1.0.0",
-	"description": "Scalable starter boilerplate for React applications",
-	"main": "./src/index.js",
-	"scripts": {
-		"start": "webpack-dev-server --mode development --open --env.dev",
-		"build": "rm -rf ./dist && webpack --mode production",
-		"lint": "npm run lint:js && npm run lint:css && npm run lint:scss",
-		"lint:js": "eslint './src/**/*.js'",
-		"lint:css": "stylelint './src/**/*.js' --config .stylelintrc",
-		"lint:scss": "stylelint './src/**/*.scss' --config .stylelintrc.json",
-		"test": "jest",
-		"snyk-protect": "snyk protect",
-		"prepublish": "npm run snyk-protect"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:three11/react-template.git"
-	},
-	"keywords": [
-		"React",
-		"Starter",
-		"Template",
-		"SPA",
-		"JavaScript"
-	],
-	"authors": [
-		{
-			"name": "Three 11 Ltd",
-			"email": "hello@three-11.com",
-			"role": "Developer"
-		},
-		{
-			"name": "Alexander Panayotov",
-			"email": "alexander.panayotov@gmail.com",
-			"role": "Developer"
-		},
-		{
-			"name": "Atanas Atanasov",
-			"email": "scriptex.bg@gmail.com",
-			"role": "Developer"
-		}
-	],
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/three11/react-template/issues"
-	},
-	"homepage": "https://github.com/three11/react-template#readme",
-	"dependencies": {
-		"normalize.css": "8.0.1",
-		"react": "16.10.2",
-		"react-dom": "16.10.2",
-		"react-redux": "7.1.1",
-		"react-router-dom": "5.1.2",
-		"react-router-redux": "4.0.8",
-		"redux": "4.0.4",
-		"redux-saga": "1.1.1",
-		"snyk": "1.231.0",
-		"styled-components": "4.4.0"
-	},
-	"devDependencies": {
-		"@babel/cli": "7.6.2",
-		"@babel/core": "7.6.2",
-		"@babel/plugin-proposal-class-properties": "7.5.5",
-		"@babel/plugin-proposal-decorators": "7.6.0",
-		"@babel/plugin-proposal-export-namespace-from": "7.5.2",
-		"@babel/plugin-proposal-function-sent": "7.5.0",
-		"@babel/plugin-proposal-json-strings": "7.2.0",
-		"@babel/plugin-proposal-numeric-separator": "7.2.0",
-		"@babel/plugin-proposal-throw-expressions": "7.2.0",
-		"@babel/plugin-syntax-dynamic-import": "7.2.0",
-		"@babel/plugin-syntax-import-meta": "7.2.0",
-		"@babel/plugin-syntax-jsx": "7.2.0",
-		"@babel/plugin-transform-async-to-generator": "7.5.0",
-		"@babel/plugin-transform-regenerator": "7.4.5",
-		"@babel/plugin-transform-runtime": "7.6.2",
-		"@babel/preset-env": "7.6.2",
-		"@babel/preset-react": "7.0.0",
-		"@babel/runtime": "7.6.2",
-		"autoprefixer": "9.6.1",
-		"babel-core": "7.0.0-bridge.0",
-		"babel-eslint": "10.0.3",
-		"babel-jest": "24.9.0",
-		"babel-loader": "8.0.6",
-		"babel-plugin-styled-components": "1.10.6",
-		"css-hot-loader": "1.4.4",
-		"css-loader": "3.2.0",
-		"cssnano": "4.1.10",
-		"enzyme": "3.10.0",
-		"enzyme-adapter-react-16": "1.14.0",
-		"enzyme-to-json": "3.4.2",
-		"eslint": "6.5.1",
-		"eslint-plugin-jest": "22.17.0",
-		"eslint-plugin-react": "7.16.0",
-		"file-loader": "4.2.0",
-		"html-loader": "0.5.5",
-		"html-webpack-plugin": "3.2.0",
-		"image-webpack-loader": "6.0.0",
-		"jest": "24.9.0",
-		"mini-css-extract-plugin": "0.8.0",
-		"node-sass": "4.12.0",
-		"offline-plugin": "5.0.7",
-		"postcss": "7.0.18",
-		"postcss-easy-import": "3.0.0",
-		"postcss-flexbugs-fixes": "4.1.0",
-		"postcss-loader": "3.0.0",
-		"postcss-url": "8.0.0",
-		"postcss-utilities": "0.8.4",
-		"react-hot-loader": "4.12.14",
-		"react-svg-loader": "3.0.3",
-		"react-test-renderer": "16.10.2",
-		"sass-loader": "8.0.0",
-		"style-loader": "1.0.0",
-		"stylelint": "11.0.0",
-		"stylelint-config-recommended": "3.0.0",
-		"stylelint-config-styled-components": "0.1.1",
-		"stylelint-processor-styled-components": "1.8.0",
-		"terser-webpack-plugin": "2.1.2",
-		"url-loader": "2.2.0",
-		"webpack": "4.41.0",
-		"webpack-cli": "3.3.9",
-		"webpack-dev-server": "3.8.2",
-		"webpack-hot-middleware": "2.25.0",
-		"webpack-pwa-manifest": "4.0.0"
-	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions"
-	],
-	"jest": {
-		"moduleDirectories": [
-			"node_modules",
-			"src"
-		],
-		"moduleFileExtensions": [
-			"js",
-			"jsx"
-		],
-		"moduleNameMapper": {
-			"^@src/(.*)$": "<rootDir>/src/$1",
-			"^@root/(.*)$": "<rootDir>/$1",
-			"^@assets/(.*)$": "<rootDir>/src/assets/$1",
-			"^@utilities/(.*)$": "<rootDir>/src/utilities/$1",
-			"^@components/(.*)$": "<rootDir>/src/components/$1",
-			"^@containers/(.*)$": "<rootDir>/src/containers/$1",
-			"\\.(css|less|sass|scss)$": "<rootDir>/test-config/StyleMock.js",
-			"\\.(jpg|jpeg|png|gif|ico|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test-config/FileMock.js"
-		},
-		"setupFiles": [
-			"<rootDir>/test-config/index.js",
-			"<rootDir>/test-config/LocalStorageMock.js"
-		],
-		"snapshotSerializers": [
-			"enzyme-to-json/serializer"
-		],
-		"transform": {
-			"^.+\\.js$": "babel-jest",
-			"\\.(css|less|sass|scss)$": "<rootDir>/test-config/StyleMock.js",
-			"\\.(jpg|jpeg|png|gif|ico|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test-config/FileMock.js"
-		},
-		"verbose": false
-	},
-	"private": true,
-	"snyk": true
+  "name": "@three11/react-template",
+  "version": "1.0.0",
+  "description": "Scalable starter boilerplate for React applications",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --env.dev",
+    "build": "rm -rf ./dist && webpack --mode production",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:scss",
+    "lint:js": "eslint './src/**/*.js'",
+    "lint:css": "stylelint './src/**/*.js' --config .stylelintrc",
+    "lint:scss": "stylelint './src/**/*.scss' --config .stylelintrc.json",
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:three11/react-template.git"
+  },
+  "keywords": [
+    "React",
+    "Starter",
+    "Template",
+    "SPA",
+    "JavaScript"
+  ],
+  "authors": [
+    {
+      "name": "Three 11 Ltd",
+      "email": "hello@three-11.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Alexander Panayotov",
+      "email": "alexander.panayotov@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Atanas Atanasov",
+      "email": "scriptex.bg@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/three11/react-template/issues"
+  },
+  "homepage": "https://github.com/three11/react-template#readme",
+  "dependencies": {
+    "normalize.css": "8.0.1",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
+    "react-redux": "7.1.1",
+    "react-router-dom": "5.1.2",
+    "react-router-redux": "4.0.8",
+    "redux": "4.0.4",
+    "redux-saga": "1.1.1",
+    "snyk": "^1.231.0",
+    "styled-components": "4.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.6.2",
+    "@babel/core": "7.6.2",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/plugin-proposal-decorators": "7.6.0",
+    "@babel/plugin-proposal-export-namespace-from": "7.5.2",
+    "@babel/plugin-proposal-function-sent": "7.5.0",
+    "@babel/plugin-proposal-json-strings": "7.2.0",
+    "@babel/plugin-proposal-numeric-separator": "7.2.0",
+    "@babel/plugin-proposal-throw-expressions": "7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@babel/plugin-syntax-import-meta": "7.2.0",
+    "@babel/plugin-syntax-jsx": "7.2.0",
+    "@babel/plugin-transform-async-to-generator": "7.5.0",
+    "@babel/plugin-transform-regenerator": "7.4.5",
+    "@babel/plugin-transform-runtime": "7.6.2",
+    "@babel/preset-env": "7.6.2",
+    "@babel/preset-react": "7.0.0",
+    "@babel/runtime": "7.6.2",
+    "autoprefixer": "9.6.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "babel-loader": "8.0.6",
+    "babel-plugin-styled-components": "1.10.6",
+    "css-hot-loader": "1.4.4",
+    "css-loader": "3.2.0",
+    "cssnano": "4.1.10",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-to-json": "3.4.2",
+    "eslint": "6.5.1",
+    "eslint-plugin-jest": "22.17.0",
+    "eslint-plugin-react": "7.16.0",
+    "file-loader": "4.2.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "image-webpack-loader": "6.0.0",
+    "jest": "24.9.0",
+    "mini-css-extract-plugin": "0.8.0",
+    "node-sass": "4.12.0",
+    "offline-plugin": "5.0.7",
+    "postcss": "7.0.18",
+    "postcss-easy-import": "3.0.0",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-loader": "3.0.0",
+    "postcss-url": "8.0.0",
+    "postcss-utilities": "0.8.4",
+    "react-hot-loader": "4.12.14",
+    "react-svg-loader": "3.0.3",
+    "react-test-renderer": "16.10.2",
+    "sass-loader": "8.0.0",
+    "style-loader": "1.0.0",
+    "stylelint": "11.0.0",
+    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.8.0",
+    "terser-webpack-plugin": "2.1.2",
+    "url-loader": "2.2.0",
+    "webpack": "4.41.0",
+    "webpack-cli": "3.3.9",
+    "webpack-dev-server": "3.8.2",
+    "webpack-hot-middleware": "2.25.0",
+    "webpack-pwa-manifest": "4.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "^@src/(.*)$": "<rootDir>/src/$1",
+      "^@root/(.*)$": "<rootDir>/$1",
+      "^@assets/(.*)$": "<rootDir>/src/assets/$1",
+      "^@utilities/(.*)$": "<rootDir>/src/utilities/$1",
+      "^@components/(.*)$": "<rootDir>/src/components/$1",
+      "^@containers/(.*)$": "<rootDir>/src/containers/$1",
+      "\\.(css|less|sass|scss)$": "<rootDir>/test-config/StyleMock.js",
+      "\\.(jpg|jpeg|png|gif|ico|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test-config/FileMock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/test-config/index.js",
+      "<rootDir>/test-config/LocalStorageMock.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "\\.(css|less|sass|scss)$": "<rootDir>/test-config/StyleMock.js",
+      "\\.(jpg|jpeg|png|gif|ico|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test-config/FileMock.js"
+    },
+    "verbose": false
+  },
+  "private": true,
+  "snyk": true
 }
