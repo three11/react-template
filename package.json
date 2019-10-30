@@ -57,7 +57,7 @@
 		"redux": "4.0.4",
 		"redux-saga": "1.1.1",
 		"snyk": "1.239.5",
-		"styled-components": "4.4.0"
+		"styled-components": "4.4.1"
 	},
 	"devDependencies": {
 		"@babel/cli": "7.6.4",
