@@ -54,7 +54,7 @@
 		"react-redux": "7.1.3",
 		"react-router-dom": "5.1.2",
 		"react-router-redux": "4.0.8",
-		"redux": "4.0.4",
+		"redux": "4.0.5",
 		"redux-saga": "1.1.3",
 		"snyk": "1.264.0",
 		"styled-components": "4.4.1"
