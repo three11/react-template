@@ -2,7 +2,7 @@
 
 exports[`NotFound component should render successfully 1`] = `
 <h1
-  className="not-found__Title-dNUNuq htgVny"
+  className="not-found__Title-gPmEgc cFWGSp"
 >
   404 
   <br />
